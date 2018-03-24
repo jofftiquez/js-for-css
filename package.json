@@ -1,5 +1,5 @@
 {
-  "name": "styles.js",
+  "name": "js-for-css",
   "version": "0.0.2",
   "description": "ES6, babel, webpack, rollup project starter.",
   "main": "index.js",
