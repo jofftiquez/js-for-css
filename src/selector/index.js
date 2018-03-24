@@ -21,11 +21,22 @@ export class Selector {
   }
 
   create(type, name) {
+    if(!type) {
+      console.error(`js-for-css error: A selector requires a selector type. 'type' is ${ typeof type }`);
+      return;
+    }
+    
+    if(!name) {
+      console.error(`js-for-css error: A selector requires a selector name. 'name' is ${ typeof name }`);
+      return;
+    }
+
     this.selector = {
       type: type,
       name: name,
       props: []
     };
+
     return this;
   }
 
@@ -53,8 +64,23 @@ export class Selector {
         selector = `.${ name }:focus`; break;
       case 'class:hover':
         selector = `.${ name }:hover`; break;
-      case 'tag':
-        selector = name;
+      case 'tag': 
+        selector = `${ name }`; break;
+      case 'tag:active':
+        selector = `${ name }:active`; break;
+      case 'tag:focus':
+        selector = `${ name }:focus`; break;
+      case 'tag:hover':
+        selector = `${ name }:hover`; break;
+      case 'id': 
+        selector = `#${ name }`; break;
+      case 'id:active':
+        selector = `#${ name }:active`; break;
+      case 'id:focus':
+        selector = `#${ name }:focus`; break;
+      case 'id:hover':
+        selector = `#${ name }:hover`; break;
+      default:;break;
     }
     builder(`${ selector } { ${ extractProps.bind(this)() } }`, this.fileName);
   }
