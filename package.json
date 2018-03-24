@@ -1,6 +1,6 @@
 {
   "name": "js-for-css",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ES6, babel, webpack, rollup project starter.",
   "main": "index.js",
   "scripts": {
