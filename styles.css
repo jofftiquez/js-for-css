@@ -1,0 +1,12 @@
+h1 { color: green; font-weight: bold;  }
+.container { padding: 20px; background: lightgrey;  }
+.btn { width: 100px; height: 40px;  }
+.btn:hover { cursor: pointer;  }
+.btn-primary { color: white; background: blue;  }
+.btn-primary:hover { width: 110px; height: 45px;  }
+.btn-secondary { color: white; background: green;  }
+.btn-accent { color: black; background: rgba(245, 253, 233, 0.5);  }
+#foo { color: green; font-weight: bold;  }
+#foo:hover {  }
+#foo:focus {  }
+#foo:active {  }
