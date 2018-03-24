@@ -1,6 +1,6 @@
 const { Selector } = require('./dist');
 
-const selector = new Selector('output', 'styles');
+const selector = new Selector('styles');
 
 selector
   .create('tag', 'h1')
@@ -47,4 +47,24 @@ selector
   .create('class', 'btn-accent')
   .addProps('color', 'black')
   .addProps('background', 'rgba(245, 253, 233, 0.5)')
+  .build();
+
+// id
+
+selector
+  .create('id', 'foo')
+  .addProps('color', 'green')
+  .addProps('font-weight', 'bold')
+  .build();
+
+selector
+  .create('id:hover', 'foo')
+  .build();
+
+selector
+  .create('id:focus', 'foo')
+  .build();
+  
+selector
+  .create('id:active', 'foo')
   .build();
