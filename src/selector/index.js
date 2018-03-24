@@ -1,6 +1,5 @@
 import { builder } from '../builder';
 
-
 function extractProps () {
   var props = ``;
   this.selector.props.forEach(prop => {
@@ -12,12 +11,22 @@ function extractProps () {
 }
 
 export class Selector {
-  constructor(type, name) {
+  constructor(fileName) {
+    this.fileName = 'styles';
+    this.selector = {
+      type: '',
+      name: '',
+      props: []
+    };
+  }
+
+  create(type, name) {
     this.selector = {
       type: type,
       name: name,
       props: []
     };
+    return this;
   }
 
   addProps(name, value) {
@@ -31,8 +40,22 @@ export class Selector {
     return this;
   }
 
-  build() {
-    let selector = `.${ this.selector.name } { ${ extractProps.bind(this)() } }`;
-    builder(selector, 'test');
+  build(options) {
+    let selector = '';
+    const { type, name, props } = this.selector;
+
+    switch(type) {
+      case 'class': 
+        selector = `.${ name }`; break;
+      case 'class:active':
+        selector = `.${ name }:active`; break;
+      case 'class:focus':
+        selector = `.${ name }:focus`; break;
+      case 'class:hover':
+        selector = `.${ name }:hover`; break;
+      case 'tag':
+        selector = name;
+    }
+    builder(`${ selector } { ${ extractProps.bind(this)() } }`, this.fileName);
   }
 }
