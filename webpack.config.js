@@ -9,14 +9,14 @@ function createConfig(target) {
   }
 
   var output = {
-    library: 'ES6Starter',
+    library: 'StylesJs',
     libraryTarget: target,
     path: path.resolve(__dirname, 'dist'),
     filename: name
   }
 
   if(typeof target === 'undefined') {
-    name = 'es6-starter.js';
+    name = 'styles.js';
     output = {
       path: path.resolve(__dirname, 'dist'),
       filename: name
@@ -25,7 +25,7 @@ function createConfig(target) {
 
   return {
     name: target,
-    entry: './src',
+    entry: ['babel-polyfill', './src'],
     output: output,
     module: {
       rules: [
