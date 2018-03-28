@@ -24,7 +24,7 @@ selector.create('class', 'btn')
   .addProps('color', 'black')
   .build();
 
-selector.creae('class:hover', 'btn')
+selector.create('class:hover', 'btn')
   .addProps('cursor', 'zoom-in')
   .addProps('background', 'rgba(255, 255, 255, 0.5)')
   .build();
