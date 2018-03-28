@@ -22,12 +22,12 @@ export class Selector {
 
   create(type, name) {
     if(!type) {
-      console.error(`js-for-css error: A selector requires a selector type. 'type' is ${ typeof type }`);
+      console.error(`js-for-css error: A selector requires a selector type. 'type' is ${ typeof type }. create(type, name)`);
       return;
     }
     
     if(!name) {
-      console.error(`js-for-css error: A selector requires a selector name. 'name' is ${ typeof name }`);
+      console.error(`js-for-css error: A selector requires a selector name. 'name' is ${ typeof name }. create(type, name)`);
       return;
     }
 
