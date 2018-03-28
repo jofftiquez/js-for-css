@@ -1,3 +1,3 @@
-import ES6Starter from './dist';
+import JsForCss from './dist';
 
-export default ES6Starter;
+export default JsForCss;
