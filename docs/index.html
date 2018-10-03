@@ -1,0 +1,115 @@
+<h1 id="js-for-css">Js For Css</h1>
+<p>Write CSS selectors using javascript!</p>
+<blockquote>
+<p>This project is currently in development stage. I&#39;m looking for collaborators :) Any type of help is very much appreciated. </p>
+</blockquote>
+<h2 id="sample">Sample</h2>
+<p><strong>Write Javascript</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> <span class="hljs-keyword">selector</span> = <span class="hljs-keyword">new</span> <span class="hljs-keyword">Selector</span>();
+
+<span class="hljs-keyword">selector</span>.create(<span class="hljs-string">'tag'</span>, <span class="hljs-string">'p'</span>)
+  .addProps(<span class="hljs-string">'text-align'</span>, <span class="hljs-string">'justify'</span>)
+  .addProps(<span class="hljs-string">'font-weight'</span>, <span class="hljs-string">'bold'</span>)
+  .addProps(<span class="hljs-string">'font-size'</span>, <span class="hljs-string">'16px;'</span>)
+  .build();
+
+<span class="hljs-keyword">selector</span>.create(<span class="hljs-string">'class'</span>, <span class="hljs-string">'btn'</span>)
+  .addProps(<span class="hljs-string">'width'</span>, <span class="hljs-string">'100px'</span>)
+  .addProps(<span class="hljs-string">'height'</span>, <span class="hljs-string">'45px'</span>)
+  .addProps(<span class="hljs-string">'background'</span>, <span class="hljs-string">'#fefefe'</span>)
+  .addProps(<span class="hljs-string">'color'</span>, <span class="hljs-string">'black'</span>)
+  .build();
+
+<span class="hljs-keyword">selector</span>.create(<span class="hljs-string">'class:hover'</span>, <span class="hljs-string">'btn'</span>)
+  .addProps(<span class="hljs-string">'cursor'</span>, <span class="hljs-string">'zoom-in'</span>)
+  .addProps(<span class="hljs-string">'background'</span>, <span class="hljs-string">'rgba(255, 255, 255, 0.5)'</span>)
+  .build();
+</code></pre>
+<p><strong>Output CSS</strong></p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">text-align</span>: justify;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+
+<span class="hljs-selector-class">.btn</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">45px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fefefe</span>;
+  <span class="hljs-attribute">color</span>: black;
+}
+
+<span class="hljs-selector-class">.btn</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">cursor</span>: zoom-in;
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgba</span>(255, 255, 255, 0.5);
+}
+</code></pre>
+<h2 id="install">Install</h2>
+<p><strong>NPM</strong></p>
+<pre><code>npm <span class="hljs-keyword">install</span> js-<span class="hljs-keyword">for</span>-css <span class="hljs-comment">--save</span>
+</code></pre><p><strong>YARN</strong></p>
+<pre><code>yarn <span class="hljs-keyword">add</span> js-<span class="hljs-keyword">for</span>-css
+</code></pre><h2 id="usage">Usage</h2>
+<pre><code class="lang-javascript">import <span class="hljs-comment">{ Selector }</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'js-for-css'</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">selector</span> = <span class="hljs-keyword">new</span> <span class="hljs-keyword">Selector</span>();
+
+<span class="hljs-comment">// do your stuff</span>
+</code></pre>
+<h2 id="api">API</h2>
+<p><strong>Methods</strong></p>
+<blockquote>
+<p><strong><code>.create(type, name)</code></strong></p>
+</blockquote>
+<p><code>.create()</code> methods is required to create a css selector. This method receives 2 required parameters, <code>type</code> and <code>name</code>. <code>type</code> is the selector type, e.g. classes, ids, tags etc. <code>name</code> is the selector type name, e.g. <code>btn</code>, <code>btn-primary</code>, <code>div</code>, <code>p</code>, <code>h1</code> etc.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Available types</strong></th>
+<th><strong>Ouput</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>class</code></td>
+<td>.[class name] {}</td>
+</tr>
+<tr>
+<td><code>class:active</code></td>
+<td>.[class name]:active {}</td>
+</tr>
+<tr>
+<td><code>class:focus</code></td>
+<td>.[class name]:focus {}</td>
+</tr>
+<tr>
+<td><code>class:hover</code></td>
+<td>.[class name]:hover {}</td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td>.[html tag] {}</td>
+</tr>
+<tr>
+<td><code>tag:active</code></td>
+<td>.[html tag]:active {}</td>
+</tr>
+<tr>
+<td><code>tag:focus</code></td>
+<td>.[html tag]:focus {}</td>
+</tr>
+<tr>
+<td><code>tag:hover</code></td>
+<td>.[html tag]:hover {}</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>.addProps(property, value)</code></strong></p>
+</blockquote>
+<p>As the name suggests, this method adds a css property to the selector you created e.g. <code>background</code>, <code>font-size</code>, <code>color</code>, <code>height</code>, <code>width</code> etc...</p>
+<p>See <a href="http://web.simmons.edu/~grabiner/comm244/weekthree/css-basic-properties.html">CSS Basic Properties</a></p>
+<blockquote>
+<p><strong><code>.build()</code></strong></p>
+</blockquote>
+<p>This method is required to build each selector. This must be invoked at the end of every selector invocation.</p>
