@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/jofftiquez/es6-starter#readme",
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "npm": "^6.4.1"
   }
 }
