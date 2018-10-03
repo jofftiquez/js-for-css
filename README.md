@@ -101,7 +101,7 @@ const selector = new Selector();
 | `class:in-range` | .[class name]:in-range {} |
 | `class:intermediate` | .[class name]:intermediate {} |
 | `class:invalid` | .[class name]:invalid {} |
-| `tag` | #[html tag] {} |
+| `tag` | [html tag] {} |
 | `tag:active` | [html tag]:active {} |
 | `tag:focus` | [html tag]:focus {} |
 | `tag:hover` | [html tag]:hover {} |
