@@ -55,9 +55,11 @@ export class Selector {
   }
 
   buildSelectorString(type, name, suffix) {
+    const isNotGrouping = name.length === 1;
+
     switch (type) {
       case "tag":
-        if (name.length === 1) {
+        if (isNotGrouping) {
           const [slctr] = name;
           return suffix ? `${slctr}${suffix}` : slctr;
         }
@@ -67,7 +69,7 @@ export class Selector {
           .join(",");
 
       case "class":
-        if (name.length === 1) {
+        if (isNotGrouping) {
           const [slctr] = name;
           return suffix ? `.${slctr}${suffix}` : `.${slctr}`;
         }
@@ -77,7 +79,7 @@ export class Selector {
           .join(",");
 
       case "id":
-        if (name.length === 1) {
+        if (isNotGrouping) {
           const [slctr] = name;
           return suffix ? `#${slctr}${suffix}` : `#${slctr}`;
         }
