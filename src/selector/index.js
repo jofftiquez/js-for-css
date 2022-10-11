@@ -65,7 +65,7 @@ export class Selector {
         }
 
         return name
-          .map((slctr) => (suffix ? `.${slctr}${suffix}` : `${slctr}`))
+          .map((slctr) => (suffix ? `${slctr}${suffix}` : `${slctr}`))
           .join(",");
 
       case "class":
