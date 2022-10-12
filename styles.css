@@ -3,10 +3,16 @@ h1 { color: green; font-weight: bold;  }
 .btn { width: 100px; height: 40px;  }
 .btn:hover { cursor: pointer;  }
 .btn-primary { color: white; background: blue;  }
-.btn-primary:hover { width: 110px; height: 45px;  }
 .btn-secondary { color: white; background: green;  }
+.btn-primary:hover { width: 110px; height: 45px;  }
 .btn-accent { color: black; background: rgba(245, 253, 233, 0.5);  }
 #foo { color: green; font-weight: bold;  }
-#foo:hover {  }
 #foo:focus {  }
 #foo:active {  }
+#foo:hover {  }
+h2,h3,h4 { position: relative; color: green; font-weight: bold;  }
+h2::after,h3::after,h4::after { content: ''; position: absolute; top: 0; right: 0; width: 40px; aspect-ratio: 1; background-color: black;  }
+.class1:hover,.class2:hover,.class3:hover {  }
+.class1,.class2,.class3 {  }
+#id1,#id2,#id3 {  }
+#id1::before,#id2::before,#id3::before {  }

@@ -20,10 +20,7 @@ selector
   .addProps('height', '40px')
   .build();
 
-selector
-  .create('class:hover', 'btn')
-  .addProps('cursor', 'pointer')
-  .build();
+selector.create('class:hover', 'btn').addProps('cursor', 'pointer').build();
 
 selector
   .create('class', 'btn-primary')
@@ -57,14 +54,36 @@ selector
   .addProps('font-weight', 'bold')
   .build();
 
+selector.create('id:hover', 'foo').build();
+
+selector.create('id:focus', 'foo').build();
+
+selector.create('id:active', 'foo').build();
+
+// css groupings
+
 selector
-  .create('id:hover', 'foo')
+  .create('tag', 'h2, h3, h4')
+  .addProps('position', 'relative')
+  .addProps('color', 'green')
+  .addProps('font-weight', 'bold')
   .build();
 
 selector
-  .create('id:focus', 'foo')
+  .create('tag::after', 'h2, h3, h4')
+  .addProps('content', "''")
+  .addProps('position', 'absolute')
+  .addProps('top', 0)
+  .addProps('right', 0)
+  .addProps('width', '40px')
+  .addProps('aspect-ratio', '1')
+  .addProps('background-color', 'black')
   .build();
-  
-selector
-  .create('id:active', 'foo')
-  .build();
+
+selector.create('class', 'class1, class2, class3').build();
+
+selector.create('class:hover', 'class1, class2, class3').build();
+
+selector.create('id', 'id1, id2, id3').build();
+
+selector.create('id::before', 'id1, id2, id3').build();
