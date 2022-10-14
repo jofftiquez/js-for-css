@@ -1,18 +1,101 @@
-h1 { color: green; font-weight: bold;  }
-.container { padding: 20px; background: lightgrey;  }
-.btn { width: 100px; height: 40px;  }
-.btn:hover { cursor: pointer;  }
-.btn-primary { color: white; background: blue;  }
-.btn-secondary { color: white; background: green;  }
-.btn-primary:hover { width: 110px; height: 45px;  }
-.btn-accent { color: black; background: rgba(245, 253, 233, 0.5);  }
-#foo { color: green; font-weight: bold;  }
-#foo:focus {  }
-#foo:active {  }
-#foo:hover {  }
-h2,h3,h4 { position: relative; color: green; font-weight: bold;  }
-h2::after,h3::after,h4::after { content: ''; position: absolute; top: 0; right: 0; width: 40px; aspect-ratio: 1; background-color: black;  }
-.class1:hover,.class2:hover,.class3:hover {  }
-.class1,.class2,.class3 {  }
-#id1,#id2,#id3 {  }
-#id1::before,#id2::before,#id3::before {  }
+h1 {
+  color: green;
+  font-weight: bold;
+}
+.container {
+  padding: 20px;
+  background: lightgrey;
+}
+.btn {
+  width: 100px;
+  height: 40px;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.btn-primary {
+  color: white;
+  background: blue;
+}
+.btn-secondary {
+  color: white;
+  background: green;
+}
+.btn-primary:hover {
+  width: 110px;
+  height: 45px;
+}
+.btn-accent {
+  color: black;
+  background: rgba(245, 253, 233, 0.5);
+}
+#foo {
+  color: green;
+  font-weight: bold;
+}
+#foo:focus {
+  outline: none;
+}
+#foo:active {
+  color: greenyellow;
+}
+#foo:hover {
+  color: aquamarine;
+}
+h2,
+h3,
+h4 {
+  position: relative;
+  color: green;
+  font-weight: bold;
+}
+h2::after,
+h3::after,
+h4::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  aspect-ratio: 1;
+  background-color: black;
+}
+.class1:hover {
+  color: aliceblue;
+}
+.class2:hover {
+  color: antiquewhite;
+}
+.class3:hover {
+  color: azure;
+}
+
+.class1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.class2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.class3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#id1 {
+  font-size: large;
+}
+#id2 {
+  font-size: larger;
+}
+#id3 {
+  font-size: x-large;
+}
+
+#id1::before {
+  content: "Read this: ";
+}
+#id2::before {
+  content: "Read this: ";
+}
+#id3::before {
+  content: "Read this: ";
+}
