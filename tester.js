@@ -20,7 +20,10 @@ selector
   .addProps('height', '40px')
   .build();
 
-selector.create('class:hover', 'btn').addProps('cursor', 'pointer').build();
+selector
+  .create('class:hover', 'btn')
+  .addProps('cursor', 'pointer')
+  .build();
 
 selector
   .create('class', 'btn-primary')
@@ -54,11 +57,20 @@ selector
   .addProps('font-weight', 'bold')
   .build();
 
-selector.create('id:hover', 'foo').build();
+selector
+  .create('id:hover', 'foo')
+  .addProps('color','aquamarine')
+  .build();
 
-selector.create('id:focus', 'foo').build();
+selector
+  .create('id:focus', 'foo')
+  .addProps('outline', 'none')
+  .build();
 
-selector.create('id:active', 'foo').build();
+selector
+  .create('id:active', 'foo')
+  .addProps('color','greenyellow')
+  .build();
 
 // css groupings
 
@@ -82,8 +94,40 @@ selector
 
 selector.create('class', 'class1, class2, class3').build();
 
+selector
+  .create('class:class1')
+  .addProps('font-family', 'Franklin Gothic Medium')
+  .build();
+
+selector
+  .create('class:class2')
+  .addProps('font-family','Helvetica')
+  .build();
+
+selector
+  .create('class:class3')
+  .addProps('font-family','Verdana')
+  .build();
+
 selector.create('class:hover', 'class1, class2, class3').build();
 
 selector.create('id', 'id1, id2, id3').build();
 
-selector.create('id::before', 'id1, id2, id3').build();
+selector
+  .create('id:id1')
+  .addProps('font-size', 'large')
+  .build();
+
+selector
+  .create('id:id2')
+  .addProps('font-size','larger')
+  .build();
+
+selector
+  .create('id:id3')
+  .addProps('font-size','x-large')
+  .build();
+
+selector.create('id::before', 'id1, id2, id3')
+  .addProps('content', "Read this: ")
+  .build();
